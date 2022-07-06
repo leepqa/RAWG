@@ -1,5 +1,5 @@
 export interface GamesDTO {
-  results: Game[];
+
   info: any;
 }
 
