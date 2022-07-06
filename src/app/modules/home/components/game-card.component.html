@@ -1,0 +1,12 @@
+<div class="card" (click)="openUserDescription()">
+  <div class="gamePicture">
+    <img src={{game?.image_background}} alt="picture">
+  </div>
+  <div class="container">
+    <div class="column">
+      <span class="gameInfo">Id: {{game?.games?.id}} </span>
+      <span class="gameInfo">Slug: {{ game?.games?.slug }}</span>
+      <span class="gameInfo">Name: {{game?.games?.name}}</span>
+      <span class="gameInfo">Added: {{game?.games?.added}}</span>
+    </div>
+  </div>
