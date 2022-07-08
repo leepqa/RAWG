@@ -14,9 +14,3 @@ export class AppComponent implements OnInit {
     this.dataService.getData().subscribe();
   }
 }
-
-
-
-
-// api key
-// 91d8740264754797974b146729857469

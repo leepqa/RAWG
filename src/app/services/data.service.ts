@@ -7,7 +7,8 @@ import { map, Observable, of, tap } from 'rxjs';
 export class DataService {
 
   private games: Game[] = []
-  private URL = "https://api.rawg.io/api/platforms";
+  private games$: any[] = [];
+  private URL = "https://api.rawg.io/api/";
 
   constructor(private http: HttpClient) { }
 
@@ -15,29 +16,18 @@ export class DataService {
     return this.http.get<Game[]>(this.URL);
   }
 
-  // public saveGame(): void {
+  public getGames(): any {
+    if (this.games$.length) {
+      return of(this.games$);
+    }
 
-  //   const game: Game = {
-  //     games: {
-  //       id: 3498,
-  //       slug: '',
-  //       name: '',
-  //       added: 17647,
-  //     },
-  //     games_count: 457786,
-  //     id: 4,
-  //     image: null,
-  //     image_background: '',
-  //     name: '',
-  //     slug: '',
-  //     year_end: null,
-  //     year_start: null
-  //   }
-  //   this.games = [game, ...this.games];
-  // }
+    return this.http.get<any>(this.URL + 'games').pipe(
+      map(data => data.results),
+      tap(games => this.games$ = games)
+    );
+  }
 
-  public getGameData(): Observable<Game[]> {
-
+  public getPlatformsData(): Observable<Game[]> {
     if (this.games.length) {
       return of(this.games);
     }

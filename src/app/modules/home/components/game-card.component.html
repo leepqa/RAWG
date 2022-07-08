@@ -1,12 +1,9 @@
-<div class="card" (click)="openUserDescription()">
-  <div class="gamePicture">
-    <img src={{game?.image_background}} alt="picture">
-  </div>
-  <div class="container">
-    <div class="column">
-      <span class="gameInfo">Id: {{game?.games?.id}} </span>
-      <span class="gameInfo">Slug: {{ game?.games?.slug }}</span>
-      <span class="gameInfo">Name: {{game?.games?.name}}</span>
-      <span class="gameInfo">Added: {{game?.games?.added}}</span>
-    </div>
-  </div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+  </mat-card-header>
+  <img mat-card-image src={{game?.background_image}} alt="picture game">
+  <mat-card-content>
+    {{game?.name}}
+  </mat-card-content>
+</mat-card>

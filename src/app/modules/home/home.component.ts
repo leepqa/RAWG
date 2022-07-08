@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router,) { }
 
   ngOnInit(): void {
-    this.games$ = this.dataService.getGameData();
+    this.games$ = this.dataService.getGames();
   }
 
   public openDescription(id: Number): void {

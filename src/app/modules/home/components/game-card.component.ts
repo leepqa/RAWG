@@ -9,14 +9,14 @@ import { Game } from 'src/app/interface/game.interface';
 })
 export class GameCardComponent implements OnInit {
 
-  @Input() public game: Game | undefined;
+  @Input() public game: any | undefined;
   @Output() public openDescription = new EventEmitter<Number>();
 
 
   constructor() { }
 
   ngOnInit(): void {
-
+    console.log(this.game);
   }
 
   public openUserDescription(): void {
