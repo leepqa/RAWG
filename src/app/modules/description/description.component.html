@@ -1,0 +1,19 @@
+<div class="cardDescription" *ngIf="(game$ | async) as game">
+  <div class="gamePicture">
+    <img src={{game?.image_background}} alt="picture">
+  </div>
+  <div class="container">
+    <div class="column">
+      <span class="gameDescription">Games:</span>
+      <span class="gameDescription">Games_count </span>
+      <span class="gameDescription">Id: </span>
+      <span class="gameDescription">image </span>
+      <span class="gameDescription">Name</span>
+      <span class="gameDescription">Slug </span>
+      <span class="gameDescription">Year_end: </span>
+      <span class="gameDescription">Year_start: </span>
+    </div>
+  </div>
+  <div class="button">
+    <button class="btnBack" (click)="backToHome()">Back</button>
+  </div>
